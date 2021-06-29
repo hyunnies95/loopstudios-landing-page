@@ -43,24 +43,29 @@ body
   font-weight: bold
   letter-spacing: 0.07rem
   position: relative
-  @media screen and (max-width: 767px)
-    font-size: 2.5rem
-    font-weight: $light
-    letter-spacing: -0.5px
-    text-transform: uppercase
   &::before
-    @media screen and (min-width: 768px)
-      background: $col-white
-      bottom: -0.8rem
-      content: ''
-      height: 0.2rem
-      left: 50%
-      position: absolute
-      transform: translateX(-50%)
-      transition: $transition
-      width: 0
+    background: $col-white
+    bottom: -0.8rem
+    content: ''
+    height: 0.2rem
+    left: 50%
+    position: absolute
+    transform: translateX(-50%)
+    transition: $transition
+    width: 0
   &:hover::before
     width: 2.4rem
+  &--header
+    @media screen and (max-width: 767px)
+      font-size: 2.5rem
+      font-weight: $light
+      letter-spacing: -0.5px
+      text-transform: uppercase
+      transition: $transition transform
+      &:hover
+        transform: translateX(1.5rem)
+      &::before
+        display: none
 
 .t-copyright
   color: $col-dark-gray
